@@ -20,6 +20,9 @@ public class App {
             case "3":
                 Game.startGame(scanner, "calc");
                 break;
+            case "4":
+                Game.startGame(scanner, "nod");
+                break;
             default:
                 System.out.println("Выберите номер из списка");
         }
@@ -31,6 +34,7 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
         System.out.print("Your choice: ");
     }
