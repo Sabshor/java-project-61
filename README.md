@@ -6,3 +6,5 @@
 https://asciinema.org/a/P8aGxfrRkaReJJducw2JVYvHG
 ### asciinema test game Calc screenshot
 [![asciicast](https://asciinema.org/a/gNnJBjpEYJublKT1LuzK4Ep9h.svg)](https://asciinema.org/a/gNnJBjpEYJublKT1LuzK4Ep9h)
+### asciinema test game GCD
+[![asciicast](https://asciinema.org/a/n5M1z162MT4BgRtitpvk814VQ.svg)](https://asciinema.org/a/n5M1z162MT4BgRtitpvk814VQ)
