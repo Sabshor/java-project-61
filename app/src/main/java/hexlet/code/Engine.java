@@ -1,8 +1,8 @@
 package hexlet.code;
 
 public class Engine {
-    public static int countTryToFinish = 3;
-    public static String hiddenPosition = "..";
+    public static final int countTryToFinish = 3;
+    public static final String hiddenPosition = "..";
 
     public static String getTaskGame(String gameName) {
         var task = "";
@@ -34,7 +34,9 @@ public class Engine {
                 statement = Integer.toString(getRandomNumber());
                 break;
             case "calc":
-                statement = getRandomDigit(1, 9) + " " + getCalcOperand() + " " + getRandomNumber();
+                var minDigit = 1;
+                var maxDigit = 9;
+                statement = getRandomDigit(minDigit, maxDigit) + " " + getCalcOperand() + " " + getRandomNumber();
                 break;
             case "nod":
                 statement = getRandomNumber() + " " + getRandomNumber();
@@ -72,10 +74,14 @@ public class Engine {
     }
     public static String getProgressionStatement() {
         var countSteps = 10;
+        var minValueStep = 2;
+        var maxValueStep = 9;
+        var minValueSecretPosition = 1;
+        var maxValueSecretPosition = 9;
         var statement = new StringBuilder();
         var startProgression = getRandomNumber();
-        var stepProgression = getRandomDigit(2, 9);
-        var secretPosition = getRandomDigit(1, 9);
+        var stepProgression = getRandomDigit(minValueStep, maxValueStep);
+        var secretPosition = getRandomDigit(minValueSecretPosition, maxValueSecretPosition);
         for (var i = 1; i <= countSteps; i++) {
             var number = (i == secretPosition) ? hiddenPosition : (startProgression + stepProgression * i);
             statement.append(number);
@@ -160,21 +166,25 @@ public class Engine {
         return isPrime;
     }
     public static int getRandomNumber() {
-        int number = (int) (Math.random() * 100);
+        var rank = 100;
+        int number = (int) (Math.random() * rank);
         while (number == 0) {
-            number = (int) (Math.random() * 100);
+            number = (int) (Math.random() * rank);
         }
         return number;
     }
     public static int getRandomDigit(int minValue, int maxValue) {
-        int number = (int) (Math.random() * 10);
+        var rank = 10;
+        int number = (int) (Math.random() * rank);
         while ((number < minValue) || (number > maxValue)) {
-            number = (int) (Math.random() * 10);
+            number = (int) (Math.random() * rank);
         }
         return number;
     }
     public static char getCalcOperand() {
-        return switch (getRandomDigit(1, 3)) {
+        var minValue = 1;
+        var maxValue = 1;
+        return switch (getRandomDigit(minValue, maxValue)) {
             case 1 -> '+';
             case 2 -> '-';
             case 3 -> '*';
