@@ -1,9 +1,8 @@
 package hexlet.code;
 
 public class Engine {
-    public static final int countTryToFinish = 3;
-    public static final String hiddenPosition = "..";
-
+    public static final int COUNT_TRY_TO_FINISH = 3;
+    public static final String HIDDEN_POSITION = "..";
     public static String getTaskGame(String gameName) {
         var task = "";
         switch (gameName.toLowerCase()) {
@@ -34,8 +33,8 @@ public class Engine {
                 statement = Integer.toString(getRandomNumber());
                 break;
             case "calc":
-                var minDigit = 1;
-                var maxDigit = 9;
+                final int minDigit = 1;
+                final int maxDigit = 9;
                 statement = getRandomDigit(minDigit, maxDigit) + " " + getCalcOperand() + " " + getRandomNumber();
                 break;
             case "nod":
@@ -73,17 +72,17 @@ public class Engine {
         return correctAnswerText;
     }
     public static String getProgressionStatement() {
-        var countSteps = 10;
-        var minValueStep = 2;
-        var maxValueStep = 9;
-        var minValueSecretPosition = 1;
-        var maxValueSecretPosition = 9;
+        final int countSteps = 10;
+        final int minValueStep = 2;
+        final int maxValueStep = 9;
+        final int minValueSecretPosition = 1;
+        final int maxValueSecretPosition = 9;
         var statement = new StringBuilder();
         var startProgression = getRandomNumber();
         var stepProgression = getRandomDigit(minValueStep, maxValueStep);
         var secretPosition = getRandomDigit(minValueSecretPosition, maxValueSecretPosition);
         for (var i = 1; i <= countSteps; i++) {
-            var number = (i == secretPosition) ? hiddenPosition : (startProgression + stepProgression * i);
+            var number = (i == secretPosition) ? HIDDEN_POSITION : (startProgression + stepProgression * i);
             statement.append(number);
             statement.append(" ");
         }
@@ -134,7 +133,7 @@ public class Engine {
         var skipNumber = 0;
         var skipPosition = 0;
         for (var i = 0; i < numbers.length; i++) {
-            if (hiddenPosition.equals(numbers[i])) {
+            if (HIDDEN_POSITION.equals(numbers[i])) {
                 skipPosition = i;
                 break;
             }
@@ -166,7 +165,7 @@ public class Engine {
         return isPrime;
     }
     public static int getRandomNumber() {
-        var rank = 100;
+        final int rank = 100;
         int number = (int) (Math.random() * rank);
         while (number == 0) {
             number = (int) (Math.random() * rank);
@@ -174,7 +173,7 @@ public class Engine {
         return number;
     }
     public static int getRandomDigit(int minValue, int maxValue) {
-        var rank = 10;
+        final int rank = 10;
         int number = (int) (Math.random() * rank);
         while ((number < minValue) || (number > maxValue)) {
             number = (int) (Math.random() * rank);
@@ -184,11 +183,20 @@ public class Engine {
     public static char getCalcOperand() {
         var minValue = 1;
         var maxValue = 1;
-        return switch (getRandomDigit(minValue, maxValue)) {
-            case 1 -> '+';
-            case 2 -> '-';
-            case 3 -> '*';
-            default -> '+';
-        };
+        char operand = '+';
+        switch (getRandomDigit(minValue, maxValue)) {
+            case 1 :
+                operand = '+';
+                break;
+            case 2 :
+                operand = '-';
+                break;
+            case 3 :
+                operand = '*';
+                break;
+            default :
+                break;
+        }
+        return operand;
     }
 }

@@ -19,7 +19,7 @@ public class Game {
             userAnswerIsTrue = (userAnswer.equalsIgnoreCase(correctAnswer));
             if (userAnswerIsTrue) {
                 System.out.println("Correct!");
-                if (indexUserTry == Engine.countTryToFinish) {
+                if (indexUserTry == Engine.COUNT_TRY_TO_FINISH) {
                     System.out.println("Congratulations, " + userName + "!");
                 }
             } else {
@@ -27,7 +27,7 @@ public class Game {
                                     + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
             }
-        } while (userAnswerIsTrue && (indexUserTry < Engine.countTryToFinish));
+        } while (userAnswerIsTrue && (indexUserTry < Engine.COUNT_TRY_TO_FINISH));
     }
 
 
