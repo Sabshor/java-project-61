@@ -183,20 +183,13 @@ public class Engine {
     public static char getCalcOperand() {
         var minValue = 1;
         var maxValue = 1;
-        char operand = '+';
-        switch (getRandomDigit(minValue, maxValue)) {
-            case 1 :
-                operand = '+';
-                break;
-            case 2 :
-                operand = '-';
-                break;
-            case 3 :
-                operand = '*';
-                break;
-            default :
-                break;
+        int chooseOperand = getRandomDigit(minValue, maxValue);
+        if (chooseOperand == 1) {
+            return '+';
+        } else if (chooseOperand == 2) {
+            return '-';
+        } else {
+            return '*';
         }
-        return operand;
     }
 }
