@@ -8,3 +8,5 @@ https://asciinema.org/a/P8aGxfrRkaReJJducw2JVYvHG
 [![asciicast](https://asciinema.org/a/gNnJBjpEYJublKT1LuzK4Ep9h.svg)](https://asciinema.org/a/gNnJBjpEYJublKT1LuzK4Ep9h)
 ### asciinema test game GCD
 [![asciicast](https://asciinema.org/a/n5M1z162MT4BgRtitpvk814VQ.svg)](https://asciinema.org/a/n5M1z162MT4BgRtitpvk814VQ)
+### asciinema demo game progression
+<a href="https://asciinema.org/a/QYYyB0JFv3uwhzPw7a3kNPvJ0" target="_blank"><img src="https://asciinema.org/a/QYYyB0JFv3uwhzPw7a3kNPvJ0.svg" /></a>
