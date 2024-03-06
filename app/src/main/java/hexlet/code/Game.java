@@ -11,12 +11,12 @@ public class Game {
         boolean userAnswerIsTrue;
         do {
             indexUserTry++;
-            var expression = Engine.getExpression(gameName);
-            System.out.println("Question: " + expression);
+            var statement = Engine.getStatement(gameName);
+            System.out.println("Question: " + statement);
             System.out.print("Your answer: ");
             var userAnswer = scanner.next();
-            var correctAnswerText = Engine.getCorrectAnswerText(gameName, expression);
-            userAnswerIsTrue = (userAnswer.equalsIgnoreCase(correctAnswerText));
+            var correctAnswer = Engine.getCorrectAnswerText(gameName, statement);
+            userAnswerIsTrue = (userAnswer.equalsIgnoreCase(correctAnswer));
             if (userAnswerIsTrue) {
                 System.out.println("Correct!");
                 if (indexUserTry == Engine.countTryToFinish) {
@@ -24,7 +24,7 @@ public class Game {
                 }
             } else {
                 System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was '"
-                                    + correctAnswerText + "'.");
+                                    + correctAnswer + "'.");
                 System.out.println("Let's try again, " + userName + "!");
             }
         } while (userAnswerIsTrue && (indexUserTry < Engine.countTryToFinish));
