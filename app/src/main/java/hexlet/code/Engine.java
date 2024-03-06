@@ -19,6 +19,9 @@ public class Engine {
             case "progression":
                 task = "What number is missing in the progression?";
                 break;
+            case "prime":
+                task = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+                break;
             default:
                 break;
         }
@@ -27,7 +30,7 @@ public class Engine {
     public static String getStatement(String gameName) {
         var statement = "";
         switch (gameName.toLowerCase()) {
-            case "even":
+            case "even", "prime":
                 statement = Integer.toString(getRandomNumber());
                 break;
             case "calc":
@@ -58,6 +61,9 @@ public class Engine {
                 break;
             case "progression":
                 correctAnswerText = Integer.toString(getCorrectResultProgression(expression));
+                break;
+            case "prime":
+                correctAnswerText = isPrime(expression) ? "yes" : "no";
                 break;
             default:
                 break;
@@ -141,6 +147,17 @@ public class Engine {
             skipNumber = numberSecond + (numberSecond - numberFirst);
         }
         return skipNumber;
+    }
+    public static boolean isPrime(String expression) {
+        int number = Integer.parseInt(expression);
+        boolean isPrime = true;
+        for (var i = 2; i < number / 2; i++) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        return isPrime;
     }
     public static int getRandomNumber() {
         int number = (int) (Math.random() * 100);
