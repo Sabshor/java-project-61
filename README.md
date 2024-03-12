@@ -3,7 +3,7 @@
 ### Codeclimate tests and linter status:
 [![Maintainability](https://api.codeclimate.com/v1/badges/a29267f8b036856127e0/maintainability)](https://codeclimate.com/github/Sabshor/java-project-61/maintainability)
 ### asciinema demo game Even
-https://asciinema.org/a/P8aGxfrRkaReJJducw2JVYvHG
+[![asciicast](https://asciinema.org/a/P8aGxfrRkaReJJducw2JVYvHG.svg)](https://asciinema.org/a/P8aGxfrRkaReJJducw2JVYvHG)
 ### asciinema demo game Calc
 [![asciicast](https://asciinema.org/a/gNnJBjpEYJublKT1LuzK4Ep9h.svg)](https://asciinema.org/a/gNnJBjpEYJublKT1LuzK4Ep9h)
 ### asciinema demo game GCD
