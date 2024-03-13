@@ -6,7 +6,9 @@ import static hexlet.code.Utils.getRandomDigit;
 
 public class Calc {
     public static final String TASK_OF_GAME = "What is the result of the expression?";
-    public static void start() {
+    public static final int MIN_DIGIT = 1;
+    public static final int MAX_DIGIT = 9;
+    public static void startCalcGame() {
         String[][] statements = new String[Engine.COUNT_TRY_TO_FINISH][Engine.MAX_ARRAY_SIZE];
         for (var i = 0; i < Engine.COUNT_TRY_TO_FINISH; i++) {
             var questionStatement = getQuestionStatement();
@@ -17,12 +19,10 @@ public class Calc {
         Engine.startGame(TASK_OF_GAME, statements);
     }
     private static String getQuestionStatement() {
-        final int minDigit = 1;
-        final int maxDigit = 9;
         char[] allOperators = {'+', '-', '*'};
-        int chooseOperand = getRandomDigit(minDigit, allOperators.length);
+        int chooseOperand = getRandomDigit(MIN_DIGIT, allOperators.length);
         var operand = allOperators[chooseOperand - 1];
-        return getRandomDigit(minDigit, maxDigit) + " " + operand + " " + getRandomNumber();
+        return getRandomDigit(MIN_DIGIT, MAX_DIGIT) + " " + operand + " " + getRandomNumber();
     }
     private static String getCorrectAnswerText(String statement) {
         String[] numbers = statement.split(" ");

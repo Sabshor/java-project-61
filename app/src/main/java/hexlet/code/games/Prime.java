@@ -3,11 +3,10 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 import static hexlet.code.Utils.getRandomNumber;
-//import static hexlet.code.Utils.isPrime;
 
 public class Prime {
     public static final String TASK_OF_GAME = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    public static void start() {
+    public static void startPrimeGame() {
         String[][] statements = new String[Engine.COUNT_TRY_TO_FINISH][Engine.MAX_ARRAY_SIZE];
         for (var i = 0; i < Engine.COUNT_TRY_TO_FINISH; i++) {
             var questionStatement = getQuestionStatement();
