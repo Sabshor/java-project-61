@@ -9,6 +9,8 @@
 ### asciinema demo game GCD
 [![asciicast](https://asciinema.org/a/n5M1z162MT4BgRtitpvk814VQ.svg)](https://asciinema.org/a/n5M1z162MT4BgRtitpvk814VQ)
 ### asciinema demo game Progression
-<a href="https://asciinema.org/a/QYYyB0JFv3uwhzPw7a3kNPvJ0" target="_blank"><img src="https://asciinema.org/a/QYYyB0JFv3uwhzPw7a3kNPvJ0.svg" /></a>
-### screenshot demo game Prime
+[![asciicast](https://asciinema.org/a/QYYyB0JFv3uwhzPw7a3kNPvJ0.svg)](https://asciinema.org/a/QYYyB0JFv3uwhzPw7a3kNPvJ0)
+### asciinema demo game Prime
+[![asciicast](https://asciinema.org/a/xOOOTfP7eTl8C3hvdJwBjV3CY.svg)](https://asciinema.org/a/xOOOTfP7eTl8C3hvdJwBjV3CY)
+### screenshot demo game Prime (for test)
 ![Alt text](/screenshot_game_prime.png?raw=true "Game Prime")
