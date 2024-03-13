@@ -19,7 +19,10 @@ public class Calc {
     private static String getQuestionStatement() {
         final int minDigit = 1;
         final int maxDigit = 9;
-        return getRandomDigit(minDigit, maxDigit) + " " + getCalcOperand() + " " + getRandomNumber();
+        char[] allOperators = {'+', '-', '*'};
+        int chooseOperand = getRandomDigit(minDigit, allOperators.length);
+        var operand = allOperators[chooseOperand - 1];
+        return getRandomDigit(minDigit, maxDigit) + " " + operand + " " + getRandomNumber();
     }
     private static String getCorrectAnswerText(String statement) {
         String[] numbers = statement.split(" ");
@@ -41,17 +44,5 @@ public class Calc {
                 break;
         }
         return Integer.toString(result);
-    }
-    private static char getCalcOperand() {
-        var minValue = 1;
-        var maxValue = 3;
-        int chooseOperand = getRandomDigit(minValue, maxValue);
-        if (chooseOperand == 1) {
-            return '+';
-        } else if (chooseOperand == 2) {
-            return '-';
-        } else {
-            return '*';
-        }
     }
 }
