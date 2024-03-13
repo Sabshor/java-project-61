@@ -29,7 +29,7 @@ public class Engine {
                 return;
             }
             indexUserTry++;
-        } while (indexUserTry < Engine.COUNT_TRY_TO_FINISH);
+        } while (indexUserTry < COUNT_TRY_TO_FINISH);
         System.out.println("Congratulations, " + userName + "!");
         scanner.close();
     }

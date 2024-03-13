@@ -8,15 +8,12 @@ public class GCD {
     public static void startGCDGame() {
         String[][] statements = new String[Engine.COUNT_TRY_TO_FINISH][Engine.MAX_ARRAY_SIZE];
         for (var i = 0; i < Engine.COUNT_TRY_TO_FINISH; i++) {
-            var questionStatement = getQuestionStatement();
+            var questionStatement = getRandomNumber() + " " + getRandomNumber();
             var correctAnswer = getCorrectAnswerText(questionStatement);
             statements[i][0] = questionStatement;
             statements[i][1] = correctAnswer;
         }
         Engine.startGame(TASK_OF_GAME, statements);
-    }
-    private static String getQuestionStatement() {
-        return getRandomNumber() + " " + getRandomNumber();
     }
     private static String getCorrectAnswerText(String statement) {
         String[] numbers = statement.split(" ");
