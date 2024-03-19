@@ -23,6 +23,8 @@ public class App {
                 Your choice:\s""");
         textScanner = scanner.next();
         switch (textScanner) {
+            case "0":
+                break;
             case "1":
                 Cli.greeting(scanner);
                 break;
@@ -42,7 +44,7 @@ public class App {
                 Prime.startPrimeGame();
                 break;
             default:
-                break;
+                System.out.println("No such game found: " + textScanner);
         }
         scanner.close();
     }
