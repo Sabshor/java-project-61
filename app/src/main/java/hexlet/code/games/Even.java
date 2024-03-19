@@ -12,14 +12,22 @@ public class Even {
     public static void startEvenGame() {
         String[][] statements = new String[COUNT_TRY_TO_FINISH][MAX_ARRAY_SIZE];
         for (var i = 0; i < COUNT_TRY_TO_FINISH; i++) {
-            var questionStatement = Integer.toString(Utils.getRandomNumber());
-            var correctAnswer = getCorrectAnswerText(questionStatement);
+            int number = getNumber();
+            String[] expressions = getPrintStatementsEven(number);
+
+            var questionStatement = expressions[0];
+            var correctAnswer = expressions[1];
             statements[i][0] = questionStatement;
             statements[i][1] = correctAnswer;
         }
         Engine.startGame(TASK_OF_GAME, statements);
     }
-    private static String getCorrectAnswerText(String statement) {
-        return (Integer.parseInt(statement) % 2 == 0) ? "yes" : "no";
+    private static int getNumber() {
+        return Utils.getRandomNumber();
+    }
+    private static String[] getPrintStatementsEven(int number) {
+        String question = Integer.toString(number);
+        String correctAnswer = (number % 2 == 0) ? "yes" : "no";
+        return new String[]{question, correctAnswer};
     }
 }
