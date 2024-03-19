@@ -15,8 +15,9 @@ public class Calc {
         for (var i = 0; i < COUNT_TRY_TO_FINISH; i++) {
             var questionStatement = getCalculateStatement();
             var correctAnswer = getCorrectAnswerText(questionStatement);
+
             statements[i][0] = questionStatement;
-            statements[i][1] = correctAnswer;
+            statements[i][1] = Integer.toString(correctAnswer);
         }
         Engine.startGame(TASK_OF_GAME, statements);
     }
@@ -26,25 +27,18 @@ public class Calc {
         var operand = allOperators[chooseOperand - 1];
         return Utils.getRandomDigit(MIN_DIGIT, MAX_DIGIT) + " " + operand + " " + Utils.getRandomNumber();
     }
-    private static String getCorrectAnswerText(String statement) {
+    private static int getCorrectAnswerText(String statement) {
         String[] numbers = statement.split(" ");
         int n1 = Integer.parseInt(numbers[0]);
         int n2 = Integer.parseInt(numbers[2]);
         char operand = numbers[1].charAt(0);
-        var result = 0;
         switch (operand) {
             case '+':
-                result = n1 + n2;
-                break;
+                return n1 + n2;
             case '-':
-                result = n1 - n2;
-                break;
-            case '*':
-                result = n1 * n2;
-                break;
+                return n1 - n2;
             default:
-                break;
+                return n1 * n2;
         }
-        return Integer.toString(result);
     }
 }

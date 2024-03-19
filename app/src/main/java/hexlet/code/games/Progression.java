@@ -3,9 +3,6 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 import static hexlet.code.Engine.COUNT_TRY_TO_FINISH;
 import static hexlet.code.Engine.MAX_ARRAY_SIZE;
 
@@ -24,31 +21,29 @@ public class Progression {
             var stepProgression = Utils.getRandomDigit(MIN_VALUE_STEP, MAX_VALUE_STEP);
             var secretPosition = Utils.getRandomDigit(MIN_INDEX_SECRET_POSITION, MAX_INDEX_SECRET_POSITION);
 
-            int[] progression = getProgression(startProgression, stepProgression);
-            String[] expressions = getPrintStatementsProgression(progression, secretPosition);
+            var progression = createProgression(startProgression, stepProgression);
+            var questionStatement = getPrintQuestionProgression(progression, secretPosition);
+            var correctAnswer = Integer.toString(progression[secretPosition]);
 
-            var questionStatement = expressions[0];
-            var correctAnswer = expressions[1];
             statements[i][0] = questionStatement;
             statements[i][1] = correctAnswer;
         }
         Engine.startGame(TASK_OF_GAME, statements);
     }
-    private static int[] getProgression(int startPosition, int stepPosition) {
-        int[] progression = new int[MAX_STEPS];
+    private static int[] createProgression(int startPosition, int stepPosition) {
+        var progression = new int[MAX_STEPS];
         for (var index = 0; index < MAX_STEPS; index++) {
             progression[index] = startPosition + stepPosition * index;
         }
         return progression;
     }
-    private static String[] getPrintStatementsProgression(int[] progression, int secretPosition) {
+    private static String getPrintQuestionProgression(int[] progression, int secretPosition) {
         String[] viewProgression = new String[progression.length];
         for (var i = 0; i < progression.length; i++) {
             viewProgression[i] = Integer.toString(progression[i]);
         }
         viewProgression[secretPosition] = HIDDEN_POSITION_VALUE;
         String question = String.join(" ", viewProgression);
-        String correctAnswer = Integer.toString(progression[secretPosition]);
-        return new String[]{question, correctAnswer};
+        return question;
     }
 }

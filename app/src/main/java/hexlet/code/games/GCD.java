@@ -20,7 +20,6 @@ public class GCD {
         int a = Integer.parseInt(numbers[0]);
         int b = Integer.parseInt(numbers[1]);
         return Integer.toString(getGCD(a, b));
-
     }
     private static int getGCD(int a, int b) {
         if (a == 0) {
