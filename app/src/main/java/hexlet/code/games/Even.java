@@ -8,6 +8,7 @@ import static hexlet.code.Engine.COUNT_TRY_TO_FINISH;
 
 public class Even {
     private static final String TASK_OF_GAME = "Answer 'yes' if the number is even, otherwise answer 'no'.";
+
     public static void startEvenGame() {
         String[][] statements = new String[COUNT_TRY_TO_FINISH][MAX_ARRAY_SIZE];
         for (var i = 0; i < COUNT_TRY_TO_FINISH; i++) {
@@ -21,6 +22,7 @@ public class Even {
         }
         Engine.startGame(TASK_OF_GAME, statements);
     }
+
     private static boolean getCorrectAnswerText(int number) {
         return number % 2 == 0;
     }

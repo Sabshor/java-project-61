@@ -14,6 +14,7 @@ public class Progression {
     private static final int MAX_VALUE_STEP = 9;
     private static final int MIN_INDEX_SECRET_POSITION = 1;
     private static final int MAX_INDEX_SECRET_POSITION = 9;
+
     public static void startProgressionGame() {
         String[][] statements = new String[COUNT_TRY_TO_FINISH][MAX_ARRAY_SIZE];
         for (var i = 0; i < COUNT_TRY_TO_FINISH; i++) {
@@ -30,6 +31,7 @@ public class Progression {
         }
         Engine.startGame(TASK_OF_GAME, statements);
     }
+
     private static int[] createProgression(int startPosition, int stepPosition) {
         var progression = new int[MAX_STEPS];
         for (var index = 0; index < MAX_STEPS; index++) {
@@ -37,6 +39,7 @@ public class Progression {
         }
         return progression;
     }
+
     private static String getPrintQuestionProgression(int[] progression, int secretPosition) {
         String[] viewProgression = new String[progression.length];
         for (var i = 0; i < progression.length; i++) {

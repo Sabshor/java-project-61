@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Engine {
     public static final int COUNT_TRY_TO_FINISH = 3;
     public static final int MAX_ARRAY_SIZE = 2;
+
     public static void startGame(String taskOfGame, String[][] statements) {
         Scanner scanner = new Scanner(System.in);
         var userName = Cli.greeting(scanner);
